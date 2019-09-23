@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+<script>
+    const PI = 3.14;
+    function paragraph() {
+        for (let i = 0; i < arguments.length; i++) {
+            document.writeln("<p>");
+            console.log(arguments[i]);
+            document.writeln(arguments[i]);
+            document.writeln("</p>");
+        }
+        console.log("аргументов: " + arguments.length);
+    }
+
+    //        function paragraph() {
+    //            console.log("last");
+    //        }
+
+    paragraph("Hello JavaScript again");
+    paragraph("Это первый параграф", "Второй", "Третий");
+
+    function add(a, b) {
+        a = a || 0;
+        b = b || 0;
+//            if(isNaN(a)) {
+//                a = 0;
+//            }
+//            if(isNaN(b)) {
+//                b = 0;
+//            }
+
+        return a + b;
+    }
+
+    console.log(add(10, 20));
+    console.log(add(10));
+    console.log(add());
+
+    var cpy = add;
+    console.log(cpy(10, 20));
+
+    var cmpFunc = function (a, b) {
+        return a - b;
+    };
+
+    paragraph(cmpFunc(20, 10));
+
+    var arr = [1, 4, 2, 9, 0, 6];
+
+    function sort(arr, cmp) {
+        for(let i=0; i<arr.length; i++) {
+            for(let j=0; j<arr.length-i-1; j++) {
+                if(cmp(arr[j], arr[j+1]) > 0) {
+                    let tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+    }
+    paragraph(arr.join(","));
+    sort(arr, cmpFunc);
+    paragraph(arr.join(","));
+    sort(arr, function (a, b) {
+        return b - a;
+    });
+    paragraph(arr.join(","));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // window.onload
+        $(function () {
+            let ul = document.querySelector("ul");
+            console.log(ul.nodeName);
+        });
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+</ul>
+
+<input type="text" placeholder="Email" />
+<button>Validate</button>
+
+<script>
+    //    var list = document.querySelectorAll("li");
+    //    for(var i=0; i<list.length; i++) {
+    //        //list[i].classList.add("red");
+    //        list[i].addEventListener('click', function () {
+    //            this.classList.add('red');
+    //        });
+    //    }
+//    function $(selector) {
+//        var list = document.querySelectorAll(selector);
+//        return {
+//            on: function (action, callback) {
+//                for (var i = 0; i < list.length; i++) {
+//                    list[i].addEventListener(action, callback);
+//                }
+//            }, addClass: function ($class) {
+//                this.classList.add($class);
+//            }
+//        };
+//    }
+//
+//    $("li").on("click", function () {
+//       $(this).addClass('red');
+//    });
+
+//    j = jQuery.noConflict();
+//    j("li").on('click', function () {
+//        j(this).addClass('red');
+//    });
+
+
+    $.logging = function () {
+        for(var item of arguments) {
+            console.log(item);
+        }
+    };
+
+    $.logging("это ", " тестовый метод");
+
+    $.fn.validateEmail = function () {
+        const email = $(this).val();
+        return /\w+@\w+\.\w+/.test(email);
+    };
+    $(":button").first().on('click', function () {
+        console.log($("input:first").validateEmail());
+    })
+
+
+
+</script>
+</body>
+</html>

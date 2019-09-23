@@ -1,0 +1,7 @@
+org\itstep\websocket\ChatServer.class
+org\itstep\websocket\MessageEncode.class
+org\itstep\filter\EncodingFilter.class
+org\itstep\servlet\LoginServlet.class
+org\itstep\websocket\Message.class
+org\itstep\servlet\HomeServlet.class
+org\itstep\servlet\AdminServlet.class

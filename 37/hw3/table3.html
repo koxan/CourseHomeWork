@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+
+       table{
+       
+        border-spacing:0;
+        border-collapse:collapse;
+       }
+       tr{
+        border:1px solid black;
+        border-spacing:0;
+        border-collapse:collapse;
+       }
+        td{
+        border:1px solid black;
+        border-spacing:0;
+        border-collapse:collapse;
+        }
+        th{
+        border:1px solid black;
+        border-spacing:0;
+         border-collapse:collapse;
+        }
+		#one{
+		border:1px solid white;
+		border-bottom:1px solid black;
+		text-align: center;
+		}
+		.three{
+		text-align: right;
+		}
+		.two{
+		text-align:center;
+		}
+		.bg{
+		background-image:url("tables/fon.jpeg")
+		}
+		
+    </style>
+</head>
+<body>
+<h1>Выравнивание данных</h1>
+
+<p>Содержимое элементов 2го и 3го столбцов выравнивается по центру и по правой стороне соответственно.</p>
+
+<table>
+   <tr>
+   <td id="one" colspan ="3">Библиотека web-мастера</td>
+   </tr>
+    <tr>
+        <th class="bg">Название</th>
+        <th class="bg">Автор</th>
+        <th class="bg">Год издания</th>
+    </tr>
+    <tr>
+        <td>ASP.NET</td>
+        <td class="two">Мэтью Макдональд</td>
+        <td class="three">2003</td>
+    </tr>
+
+    <tr>
+        <td>XHTML</td>
+        <td class="two">Дональд Макмэтью</td>
+        <td class="three">2004</td>
+    </tr>
+
+    <tr>
+        <td>Использование PHP 5</td>
+        <td class="two">Мак Мэтью</td>
+        <td class="three">2005</td>
+    </tr>
+    <tr>
+        <td>Основы JavaScript</td>
+        <td class="two">Пол Уилтон</td>
+        <td class="three">2002</td>
+    </tr>
+
+    <tr>
+        <td>Web дизайн</td>
+        <td class="two">Дмитрий Кирсанов</td>
+        <td class="three">1996</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

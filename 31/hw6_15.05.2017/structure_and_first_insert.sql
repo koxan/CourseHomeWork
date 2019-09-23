@@ -1,0 +1,10 @@
+CREATE DATABASE hw6;
+USE hw6;
+
+CREATE TABLE count
+(
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ amount INT
+);
+
+INSERT INTO count VALUES(null, 10000);

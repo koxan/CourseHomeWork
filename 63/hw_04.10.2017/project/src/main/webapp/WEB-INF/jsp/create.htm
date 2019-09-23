@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="fa-events-icons-ready" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Test for you</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create_files/style.css">
+    <link href="create_files/css.css" rel="stylesheet">
+    <script src="create_files/8176bbfa2c.js"></script>
+    <link href="create_files/8176bbfa2c.css" media="all" rel="stylesheet">
+    <script src="create_files/jquery.js"></script>
+    <script src="create_files/jquery_002.js"></script>
+    <script src="create_files/additional-methods.js"></script>
+    <script src="create_files/scrypt.txt"></script>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <h2 class="logo"><a href="http://127.0.0.1:8000/">Test for You</a></h2>
+        <ul class="nav right">
+            <li><a href="http://127.0.0.1:8000/users/" class="active">Users</a></li>
+            <li><a href="http://127.0.0.1:8000/courses/">Courses</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+
+
+    <a href="http://127.0.0.1:8000/users/" class="btn-back"><i class="fa fa-angle-left"></i></a>
+
+    <h1>Create user</h1>
+
+    <form action="/addUser" class="user" method="post" novalidate="novalidate">
+        <input name="csrfmiddlewaretoken" value="lQLVeNTlSkFzLmjsxGvI8YtPyipeWDGuap1FaI6rPCqzolSchoTSSmMxGwTvT2t2"
+               type="hidden">
+        <label for="id_name">Name</label><input name="name" maxlength="100" required="" id="id_name"
+                                                aria-required="true" type="text">
+        <label for="id_email">E-mail</label><input name="email" required="" id="id_email" aria-required="true"
+                                                   type="email">
+        <label for="id_phone">Phone</label><input name="phone"
+                                                  pattern="\+\s?\d{1,2}\s?\(?\d{3}\)?\s?\d{3}\s?\d{2}\s?\d{2}"
+                                                  maxlength="100" id="id_phone" type="text">
+        <label for="id_mobile_phone">Mobile phone</label><input name="mobile_phone"
+                                                                pattern="\+\s?\d{1,2}\s?\(?\d{3}\)?\s?\d{3}\s?\d{2}\s?\d{2}"
+                                                                maxlength="100" id="id_mobile_phone" type="text">
+        <label for="id_status">Status</label><select name="status" id="id_status">
+        <option value="inactive" selected="selected">Inactive</option>
+
+        <option value="active">Active</option>
+
+    </select>
+        <button type="submit">Create</button>
+    </form>
+
+</div>
+
+</body>
+</html>

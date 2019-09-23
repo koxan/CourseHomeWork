@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hw5_web@localhost" uuid="402263e9-0bd6-4864-8749-dfb483eb337c">
+    <database-info product="MySQL" version="5.6.35-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="hw5_web">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="classwork1"/>
+      <schema id="3" name="hr"/>
+      <schema id="4" name="hw6"/>
+      <schema id="5" name="hw7"/>
+      <schema id="6" name="information_schema"/>
+      <schema id="7" name="mydb"/>
+      <schema id="8" name="mysql"/>
+      <schema id="9" name="performance_schema"/>
+      <schema id="10" name="publications"/>
+      <schema id="11" name="sakila"/>
+      <schema id="12" name="task"/>
+      <schema id="13" name="test"/>
+      <schema id="14" name="to_do_list"/>
+      <schema id="15" name="transport_co"/>
+      <schema id="16" name="world"/>
+      <table id="17" parent="1" name="student"/>
+      <column id="18" parent="17" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="19" parent="17" name="first_name">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="20" parent="17" name="last_name">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="21" parent="17" name="age">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="22" parent="17" name="gender">
+        <data-type>set(&apos;male&apos;, &apos;female&apos;, &apos;unknown&apos;)|0</data-type>
+      </column>
+      <key id="23" parent="17" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

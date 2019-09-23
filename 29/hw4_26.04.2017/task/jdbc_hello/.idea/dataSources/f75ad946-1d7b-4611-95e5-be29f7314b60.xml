@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - people@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="people">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="hr"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="northwind"/>
+    <schema id="6" name="performance_schema"/>
+    <schema id="7" name="phpmyadmin"/>
+    <schema id="8" name="students"/>
+    <schema id="9" name="task"/>
+    <schema id="10" name="test"/>
+    <schema id="11" name="voyage"/>
+    <table id="12" parent="1" name="city"/>
+    <table id="13" parent="1" name="person"/>
+    <column id="14" parent="12" name="city_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="15" parent="12" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="16" parent="12" name="name">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="17" parent="12" name="PRIMARY">
+      <columns>city_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="18" parent="12" name="name">
+      <columns>name</columns>
+      <underlying-index>name</underlying-index>
+    </key>
+    <column id="19" parent="13" name="person_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="20" parent="13" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="21" parent="13" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="22" parent="13" name="email">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="23" parent="13" name="city_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="24" parent="13" name="city_fk">
+      <columns>city_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="25" parent="13" name="email">
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="26" parent="13" name="PRIMARY">
+      <columns>person_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="27" parent="13" name="email">
+      <columns>email</columns>
+      <underlying-index>email</underlying-index>
+    </key>
+    <foreign-key id="28" parent="13" name="city_fk">
+      <columns>city_id</columns>
+      <ref-key>~.city.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>

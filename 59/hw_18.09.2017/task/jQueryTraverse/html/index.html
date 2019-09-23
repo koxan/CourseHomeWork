@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Traversing</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut ea, fuga in nemo officia quas quis
+        tempore. Aperiam dolor dolores ea eaque earum illo in libero nesciunt nulla sit.
+    </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium alias animi, asperiores deserunt
+        dolorem dolores, earum excepturi fugiat magni nesciunt nihil numquam optio quibusdam recusandae sed sequi
+        voluptatem voluptates.
+    </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nihil officia praesentium sunt voluptatum!
+        Ad asperiores deleniti illo incidunt iste natus nobis perferendis quis veniam. Fugiat illum perferendis possimus
+        reprehenderit.
+    </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus fugit nulla quibusdam reprehenderit. Ab animi
+        cumque dolorum eligendi explicabo fugit illum iure minus nobis non, quidem recusandae? Exercitationem, quasi
+        quidem.
+    </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis culpa deserunt dicta, esse harum
+        libero magnam nemo, optio quidem ut voluptatem. Accusantium nisi, odit perspiciatis quibusdam sed velit
+        voluptates?
+    </li>
+</ul>
+<button>Effect</button>
+<button></button>
+<button></button>
+<form>
+    <label>
+        <input type="checkbox" checked/> Checkbox
+    </label>
+    <br />
+    <label>
+        <input type="checkbox"/> Checkbox
+    </label>
+</form>
+
+<script>
+    $("li").each(function (idx) {
+        console.log(idx + ": " + $(this).text().substr(0, 20));
+    });
+
+    $("li")
+    //.css('background-color','lightblue')
+        .first()
+        .css('color', 'red')
+        .end()
+        .last()
+        .css('color', 'green')
+        .end()
+        .eq(2)
+        .css('border', '1px solid black');
+    //$('li').filter('[style]').css('background', 'yellow');
+    $('li').filter(function (idx, elem) {
+        var text = $(this).text().trim();
+        return text[text.length - 1] === '?';
+    }).css('background', 'yellow');
+
+    $('input').not(':checked')
+        .parentsUntil('body')
+        .each(function () {
+            console.log(this.nodeName);
+        })
+        .css('outline', '1px solid red');
+</script>
+
+<table>
+    <tr id="head"><td>#</td><td>Name</td><td>Age</td></tr>
+    <tr><td>1</td><td>Вася</td><td>21</td></tr>
+    <tr><td>2</td><td>Маша</td><td>43</td></tr>
+    <tr><td>3</td><td>Даша</td><td>23</td></tr>
+    <tr><td>4</td><td>Рома</td><td>109</td></tr>
+</table>
+
+<script>
+    $('tr')
+        //.slice(1,4)
+        .eq(2)
+        .css('background', 'green')
+        .next()
+        .css('color', 'magenta')
+        .prevUntil('#head')
+        .css('background', 'blue')
+        .css('color', 'white')
+        .siblings()
+        .each(function () {
+            console.log(this.nodeName);
+        })
+        .find("td")
+        .css('border', '2px solid blue');
+</script>
+
+<div class="box" style="width:100px;height:100px;border:1px solid black;"></div>
+
+<script>
+    // hide,show,toggle
+    $('button').first().text('fadeOut').click(function () {
+        // 'slow' 600 ms
+        // 'fast' 200 ms
+        // 'normal' 400 ms
+        $('li').last().fadeOut('normal', function () {
+            alert("done");
+        });
+    })
+        .end()
+        .eq(1).text('fadeIn').click(function () {
+        // 'slow' 600 ms
+        // 'fast' 200 ms
+        // 'normal' 400 ms
+        $('li').last().fadeIn('normal');
+    })
+        .end()
+        .last().text('slideToggle').click(function () {
+        $('li').last().fadeToggle('normal');
+    });
+
+    // fadeIn,fadeOut,fadeTo,fadeToggle
+    // slideDown, slideUp, slideToggle
+    // animate
+    $('.box').click(function () {
+       $(this).animate({
+           marginLeft: "+=100px",
+           height: "-=5px",
+           width: "+=5px"
+       }, "normal", 'linear', function () {
+           $(this).animate({
+               marginLeft: "-=100px",
+               height: "+=5px",
+               width: "-=5px"
+           }, 'slow', 'swing');
+       });
+    });
+</script>
+</body>
+</html>

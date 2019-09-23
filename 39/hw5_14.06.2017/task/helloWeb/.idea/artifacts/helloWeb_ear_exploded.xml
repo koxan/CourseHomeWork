@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="helloWeb:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/helloWeb_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="helloWeb/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

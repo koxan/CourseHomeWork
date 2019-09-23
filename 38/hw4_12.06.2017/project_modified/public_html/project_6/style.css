@@ -1,0 +1,24 @@
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: inset;
+}
+
+thead th {
+    background-color: rgb(221, 221, 221);
+}
+
+thead tr:first-child th:first-child {
+    width: 198px;
+}
+
+
+thead tr:first-child th:nth-child(2) {
+    width: 124px;
+}
+
+tfoot th {
+    color: rgb(255, 0, 0);
+}

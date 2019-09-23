@@ -1,0 +1,13 @@
+DROP DATABASE IF EXISTS hw6_web;
+CREATE DATABASE hw6_web;
+
+USE hw6_web;
+
+CREATE TABLE book
+(
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(20),
+ describe_link TEXT,
+ link TEXT,
+ created TIMESTAMP
+);

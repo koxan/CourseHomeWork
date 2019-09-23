@@ -1,0 +1,16 @@
+var elem = document.getElementById('tux');
+var menu = document.getElementById('menu');
+var contextFunc = function(e) {
+  e.preventDefault();
+  menu.style.display = 'block';
+  menu.style.left = e.pageX + 'px';
+  menu.style.top = e.pageY + 'px';
+}
+elem.addEventListener('contextmenu', contextFunc, false);
+var menuItemFunc = function(e) {
+  menu.style.display = 'none';
+  if(e.target.id == 'option1' || e.target.id == 'option2' || e.target.id == 'option3') {
+    alert(e.target.innerHTML);
+  }
+}
+document.body.addEventListener('click', menuItemFunc, false);

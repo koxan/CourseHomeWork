@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+</head>
+<body>
+<script>
+    function Shape(name, a, b) {
+        this.name = name;
+        this.a = a;
+        this.b = b;
+        this.toString = function () {
+            return 'Shape: name = ' + this.name + ' a = ' + this.a + ' b = ' + this.b;
+        };
+        this.calcArea = function () {
+            return 0;
+        };
+    }
+
+    function Rectangle(a, b) {
+        Shape.call(this, 'Rectangle', a, b);
+        this.calcArea = function () {
+            return a * b;
+        };
+        this.toHTML = function () {
+            let div = document.createElement('DIV');
+            div.style.width = a + 'px';
+            div.style.height = b + 'px';
+            div.style.border = '1px solid black';
+
+            let text = document.createTextNode(this.toString());
+            div.appendChild(text);
+            document.body.appendChild(div);
+        }
+    }
+    Rectangle.prototype = Object.create(Shape.prototype);
+    Rectangle.prototype.constructor = Shape;
+
+    function Square(a) {
+        Rectangle.call(this, a, a);
+        this.name = 'Square';
+    }
+    Square.prototype = Object.create(Rectangle.prototype);
+    Square.prototype.constructor = Rectangle;
+
+    var rect = new Rectangle(200, 300);
+    console.log(rect.toString());
+    console.log('calcArea = ' + rect.calcArea());
+
+    var square = new Square(400);
+    console.log(square.toString());
+    console.log('calcArea = ' + square.calcArea());
+
+    rect.toHTML();
+    square.toHTML();
+    console.log();
+
+    function Ellipse(a, b) {
+        // a - длина большой полуоси, b - длина малой полуоси
+        Shape.call(this, 'Ellipse', a, b);
+        this.calcArea = function () {
+            return a * b * Math.PI;
+        }
+    }
+    Ellipse.prototype = Object.create(Shape.prototype);
+    Ellipse.prototype.constructor = Shape;
+
+    function Circle(a) {
+        // a - радиус
+        Ellipse.call(this, a, a);
+        this.name = 'Circle';
+    }
+    Circle.prototype = Object.create(Ellipse.prototype);
+    Circle.prototype.constructor = Ellipse;
+
+    var ellipse = new Ellipse(4, 5);
+    console.log(ellipse.toString());
+    console.log('calcArea = ' + ellipse.calcArea());
+
+    var circle = new Circle(6);
+    console.log(circle.toString());
+    console.log('calcArea = ' + circle.calcArea());
+</script>
+</body>
+</html>

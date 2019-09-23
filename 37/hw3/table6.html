@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+	table,tr,th,td{
+	border:1px solid black;
+	border-collapse:collapse;
+	}
+	.head{
+	background-color:grey;
+	}
+	#foot{
+	color:red;
+	text-align:center;
+	}
+	.two{
+	background-color:#75bbfd;
+	}
+	.three{
+	background-color: #FE6F5E}
+	</style>
+</head>
+<body>
+<h1>Объединение ячеек</h1>
+<p>Используя объединение ячеек можно построить значительно более сложные таблицы.</p>
+<table>
+   <tr class="head">
+   <th rowspan="2">Дни недели</th>
+   <th colspan="2">Температура</th>
+   
+   </tr>
+   
+   <tr class="head">
+   <th>Мин</th>
+   <th>Макс</th>
+   </tr>
+   
+	<tr>
+        <td>Понедельник</td>
+        <td class="two">8</td>
+        <td class="three">12</td>
+    </tr>
+	
+	
+	<tr>
+        <td>Вторник</td>
+        <td class="two">10</td>
+        <td class="three">16</td>
+    </tr>
+	
+	<tr>
+        <td>Среда</td>
+        <td class="two">11</td>
+        <td class="three">14</td>
+    </tr>
+	
+	<tr>
+        <td>Четверг</td>
+        <td class="two">12</td>
+        <td class="three">18</td>
+    </tr>
+	
+	<tr>
+        <td>Пятница</td>
+        <td class="two">14</td>
+        <td class="three">20</td>
+    </tr>
+	
+	<tr>
+        <td>Суббота</td>
+        <td class="two">14</td>
+        <td class="three">18</td>
+    </tr>
+	
+	<tr>
+        <td>Воскресенье</td>
+        <td class="two">15</td>
+        <td class="three">22</td>
+    </tr>
+	
+	<tr>
+	    <td id="foot" colspan="3">Осадков не предвидится</td>
+       
+	</tr>
+	
+	
+</table>
+
+
+
+</body>
+</html>

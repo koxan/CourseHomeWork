@@ -1,0 +1,21 @@
+.car{
+	color:red;
+}
+.names{
+	background-color:lightBlue;
+	font-size:28px;
+	font-family:sans-serif;
+	margin:-15px 0px;
+
+}
+.mails{
+	background-color:aquamarine;
+	font-size:28px;
+	font-family:sans-serif;
+	margin:-5px 0px;
+}
+h1{
+	position:relative;
+	left:30%;
+	color:blue;
+}

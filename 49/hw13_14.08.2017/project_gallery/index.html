@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework_gallery</title>
+    <style>
+        body {
+            min-width: 900px;
+        }
+
+        #gallery {
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        #gallery ul {
+            padding: 0;
+            margin: 0;
+            width: 2000px;
+            height: 300px;
+            list-style-type: none;
+        }
+
+        #gallery img {
+            width: 500px;
+            height: 300px;
+        }
+
+        #gallery li {
+            float: left;
+            width: 500px;
+            height: 300px;
+        }
+
+        #buttonLeft {
+            float: left;
+        }
+
+        #buttonRight {
+            float: right;
+        }
+
+        #buttonLeft, #buttonRight {
+            margin-top: 140px;
+        }
+
+        #slideDiv {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #main {
+            width: 700px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <button id="buttonLeft" class="needDisable" onclick="turnGoLeft()">go left</button>
+    <button id="buttonRight" class="needDisable" onclick="turnGoRight()">go right</button>
+    <div id="gallery">
+        <ul id="gallery-ul">
+            <li><img src="img/1.jpg" alt="nature1"></li>
+            <li><img src="img/2.jpg" alt="nature2"></li>
+            <li><img src="img/3.jpg" alt="nature3"></li>
+            <li><img src="img/4.jpg" alt="nature4"></li>
+        </ul>
+    </div>
+</div>
+<div id="slideDiv">
+    <button class="needDisable" onclick="turnGoSlide()">go slide</button>
+    <input onchange="checkDuration()" id="slideInput" type="number" min="1" max="10" value="1" step="0.5">
+    <button id="cancelSlide" disabled onclick="stopSlide()">cancel slide</button>
+</div>
+<script>
+    var buttons = document.getElementsByClassName('needDisable');
+    var cancelSlide = document.getElementById('cancelSlide');
+
+    var width = 500;
+
+    var maxRight = -1500;
+    var maxLeft = 0;
+
+    var margin = 0;
+    var localMargin;
+    var int;
+    var ul = document.getElementById('gallery-ul');
+    function turnGoRight() {
+        offButtons();
+        localMargin = margin - width;
+        int = setInterval(goRight, 1000 / 120);
+    }
+    function goRight() {
+        if (margin > localMargin && margin > maxRight) {
+            margin -= 10;
+            ul.style.marginLeft = margin + 'px';
+        } else {
+            clearInterval(int);
+            onButtons();
+        }
+    }
+
+    function turnGoLeft() {
+        offButtons();
+        localMargin = margin + width;
+        int = setInterval(goLeft, 1000 / 120);
+    }
+    function goLeft() {
+        if (margin < localMargin && margin < maxLeft) {
+            margin += 10;
+            ul.style.marginLeft = margin + 'px';
+        } else {
+            clearInterval(int);
+            onButtons();
+        }
+    }
+
+    function turnGoSlide() {
+        cancelSlide.disabled = false;
+        offButtons();
+        var slideDuration = document.getElementById('slideInput').value * 1000;
+        localMargin = margin - width;
+        int = setInterval(goSlide, slideDuration);
+    }
+    function goSlide() {
+        if (margin > maxRight) {
+            margin -= width;
+            ul.style.marginLeft = margin + 'px';
+        } else {
+            clearInterval(int);
+            cancelSlide.disabled = true;
+            onButtons();
+        }
+    }
+
+    function stopSlide() {
+        clearInterval(int);
+        cancelSlide.disabled = true;
+        onButtons();
+    }
+
+    function checkDuration() {
+        let slideInput = document.getElementById('slideInput');
+        if (slideInput.value < 1 || slideInput.value > 10) {
+            slideInput.value = 1;
+        }
+    }
+
+    function offButtons() {
+        for (let button of buttons) {
+            button.disabled = true;
+        }
+    }
+    function onButtons() {
+        for (let button of buttons) {
+            button.disabled = false;
+        }
+    }
+</script>
+</body>
+</html>

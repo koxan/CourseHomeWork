@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+        #one {
+            width: 350px;
+            height: 350px;
+            background: yellow;
+        }
+
+        #two {
+            width: 250px;
+            height: 250px;
+            background: red;
+        }
+
+        #three {
+            width: 150px;
+            height: 150px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div id="two">
+            <div id="three"></div>
+        </div>
+    </div>
+
+    <script>
+        var all_div = document.querySelectorAll("div");
+        for(var i=0; i<all_div.length; i++) {
+            all_div[i].addEventListener("click", function (e) {
+                console.log("bubble clicked #" + this.id);
+            }, false);
+            all_div[i].addEventListener("click", function (e) {
+                if(this.id == 'two') {
+                    //e.stopPropagation();
+                    e.stopImmediatePropagation();
+                }
+                console.log("capture clicked #" + this.id);
+            }, true);
+        }
+    </script>
+</body>
+</html>

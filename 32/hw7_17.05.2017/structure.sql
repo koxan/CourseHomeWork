@@ -1,0 +1,55 @@
+DROP DATABASE IF EXISTS hw7;
+CREATE DATABASE hw7;
+USE hw7;
+
+CREATE TABLE Directors
+(
+ DirectorID INT AUTO_INCREMENT PRIMARY KEY,
+ FirstName VARCHAR(20),
+ LastName VARCHAR(20),
+ Nationality VARCHAR(20),
+ Birth DATE
+);
+
+CREATE TABLE Movies
+(
+ MovieID INT AUTO_INCREMENT PRIMARY KEY,
+ DirectorID INT,
+ Title VARCHAR(20),
+ ReleaseYear DATE,
+ Rating DECIMAL(2,1),
+ Plot TEXT,
+ MovieLength TIME,
+ CONSTRAINT DirectorID_fk FOREIGN KEY(DirectorID) REFERENCES Directors(DirectorID)
+);
+
+CREATE TABLE Actors
+(
+ ActorID INT AUTO_INCREMENT PRIMARY KEY,
+ FirstName VARCHAR(20),
+ LastName VARCHAR(20),
+ Nationality VARCHAR(20),
+ Birth DATE
+);
+
+CREATE TABLE MovieActor
+(
+ MovieID INT,
+ ActorID INT,
+ CONSTRAINT MovieID_fk FOREIGN KEY(MovieID) REFERENCES Movies(MovieID),
+ CONSTRAINT ActorID_fk FOREIGN KEY(ActorID) REFERENCES Actors(ActorID)
+);
+
+CREATE TABLE Genres
+(
+ GenreID INT AUTO_INCREMENT PRIMARY KEY,
+ GenreName VARCHAR(20)
+);
+
+CREATE TABLE MovieGenres
+(
+ MovieID INT,
+ GenreID INT,
+ CONSTRAINT MovieID_fk2 FOREIGN KEY(MovieID) REFERENCES Movies(MovieID),
+ CONSTRAINT GenreID_fk FOREIGN KEY(GenreID) REFERENCES Genres(GenreID)
+);

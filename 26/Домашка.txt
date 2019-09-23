@@ -1,0 +1,4 @@
+¬ mySQL изменил форму с ваших слайдов например 
+в таблице titles 
+pub_id int FOREIGN KEY REFERENCES publishers(pub_id));
+pub_id int, FOREIGN KEY(pub_id) REFERENCES publishers(pub_id));

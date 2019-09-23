@@ -1,0 +1,60 @@
+h1 {
+    color: green;
+}
+
+table.main {
+    border-collapse: collapse;
+}
+
+.main td {
+    border: 1px solid black;
+    padding: 3px;
+    vertical-align: top;
+}
+
+.main a {
+    text-decoration: none;
+}
+
+.main tr:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.main a, a:visited {
+    color: black;
+}
+
+.main tr:first-child td {
+    color: white;
+    background: gray;
+    text-align: center;
+}
+
+.main tr td:nth-child(3) {
+    width: 200px;
+}
+
+input[type=text], textarea {
+    width: 300px;
+}
+
+textarea {
+    resize: none;
+}
+
+form table tr td {
+    vertical-align: top;
+}
+
+form {
+    margin-top: 10px;
+}
+
+form table {
+    border: 1px dashed gray;
+}
+
+input[type=submit] {
+    float: right;
+}

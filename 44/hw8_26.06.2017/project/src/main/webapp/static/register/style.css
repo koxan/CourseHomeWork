@@ -1,0 +1,8 @@
+form table {
+    border: 1px dashed gray;
+    padding: 5px;
+}
+
+form input[type=submit] {
+    float: right;
+}

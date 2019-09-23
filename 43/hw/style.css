@@ -1,0 +1,375 @@
+body{
+background-color: #87CEFA
+}
+.all{
+width:1000px;
+margin:0 auto;
+}
+.header{
+background-image:url(images/bg-header.jpg);
+position:relative;
+width:100%;
+height:150px;
+border:1px solid black;
+}
+.logo{
+position:absolute;
+top:-10px;
+}
+.logop{
+position:absolute;
+left:190px;
+top:75px;
+background-color:blue;
+padding:15px;
+border-radius:30px;
+color:white;
+}
+.loga{
+position:relative;
+top:20px;
+left:800px;
+background-color:white;
+padding:10px;
+border-radius:30px;
+}
+.loga:hover{
+padding:30px;
+border-radius:30px;
+background-color:white;
+color:black;
+font-size:30px;
+top:30px;
+left:635px;
+}
+.menu{
+position:relative;
+width:50%;
+float:right;
+bottom:-100px;
+}
+.menu>ul{
+list-style-type:none;
+text-align:center;
+
+}
+.menu>ul li{
+
+display:inline;
+margin:8px;
+padding:10px;
+border:1px solid black;
+background-color:blue;
+color:white;
+border-radius:15px;
+}
+.menu-a{
+text-decoration:none;
+color:white;
+}
+.menu>ul li:hover {
+color:white;
+padding:0px 10px;
+background-image:url(images/bg-header.jpg);
+}
+.menu>ul li:hover .double{
+display:block;
+position:absolute;
+}
+.menu>ul li:hover .double-li {
+display:block;
+position:relative;
+border:1px solid red;
+padding:10px;
+margin:0px;
+top:-130px;
+left:40px;
+border-radius:0px;
+}
+.menu>ul li:hover .double-li a{
+color:white;
+text-decoration:none;
+}
+
+.menu-a:hover{
+color:white;
+
+}
+.double{
+position:absolute;
+display:none;
+}
+
+
+.cont{
+margin-top:20px;
+
+}
+.left{
+width:30%;
+height:800px;
+position:relative;
+float:left;
+border:1px solid black;
+background-color:#00BFFF;
+}
+.left>ul li{
+margin:20px;
+padding:15px;
+background-color:#1E90FF;
+}
+.left>ul li a{
+text-decoration:none;
+color:white;
+}
+.left>ul li:hover{
+width:105%;
+position:relative;
+left:-60px;
+font-size:30px;
+}
+.left>ul li:hover a{
+color:blue;
+}
+.left:hover p{
+color:white;
+}
+.left>ul{
+list-style-type:none;
+text-align:left;
+}
+.left>h3{
+text-align:center;
+}
+.left>p{
+position:absolute;
+bottom:0px;
+margin:13px;
+font-size:22px;
+color:#00BFFF;
+
+}
+.right{
+width:68%;
+height:800px;
+float:right;
+position:relative;
+border:1px solid black;
+background-color:#00BFFF;
+}
+.right>h3{
+text-align:center;
+background-color:blue;
+padding:20px;
+font-size:30px;
+position:relative;
+margin-top:0px;
+color:white;
+}
+.right>p{
+text-align:center;
+background-color:blue;
+padding:17px;
+font-size:25px;
+position:relative;
+margin-top:-25px;
+color:white;
+}
+.contact{
+text-align:center;
+background-color:blue;
+padding:17px;
+font-size:25px;
+position:relative;
+color:white;
+top:90px;
+}
+.back{
+padding:20px;
+margin-right:20px;
+border-radius:30px;
+text-decoration:none;
+position:absolute;
+background-color:white;
+float:right;
+bottom:0px;
+right:0px;
+}
+.back:hover{
+background-color:blue;
+color:white;
+}
+
+.right>img{
+position:relative;
+bottom:20px;
+left:40px;
+}
+.footer{
+margin-top:20px;
+border:1px solid black;
+position:relative;
+float:left;
+width:100%;
+height:100px;
+background-image:url(images/bg-header.jpg);
+}
+#one{
+color:white;
+font-size:20px;
+position:relative;
+margin-left:20px;
+}
+#two{
+color:white;
+font-size:20px;
+position:relative;
+margin-left:20px;
+bottom:15px;
+}
+.share42init{
+position:relative;
+bottom:70px;
+right:0px;
+opacity: 0.9;
+
+
+float:right;
+}
+--------------------------------------------!!!!!!!!!!!--------------------------------------------
+.gallery {
+    margin: 100px auto 0;
+    width: 800px;
+}
+.gallery a {
+    display: inline-block;
+    height: 135px;
+    position: relative;
+    width: 180px;
+
+        top:120px;
+        left:50px;
+
+    /* CSS3 Prevent selections */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+.gallery a img {
+    border: 8px solid #fff;
+    border-bottom: 20px solid #fff;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+
+    /* CSS3 Box sizing property */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* CSS3 transition rules */
+    -webkit-transition: all 1.0s ease;
+    -moz-transition: all 1.0s ease;
+    -o-transition: all 1.0s ease;
+    transition: all 1.0s ease;
+
+    /* CSS3 Box Shadow */
+    -moz-box-shadow: 2px 2px 4px #444;
+    -webkit-box-shadow: 2px 2px 4px #444;
+    -o-box-shadow: 2px 2px 4px #444;
+    box-shadow: 2px 2px 4px #444;
+}
+
+/* Custom CSS3 rotate transformation */
+.gallery a:nth-child(1) img {
+    -moz-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+}
+.gallery a:nth-child(2) img {
+    -moz-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+.gallery a:nth-child(3) img {
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+.gallery a:nth-child(4) img {
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+.gallery a:nth-child(5) img {
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+.gallery a:nth-child(6) img {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.gallery a:nth-child(7) img {
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+.gallery a:nth-child(8) img {
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+.gallery a:nth-child(9) img {
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+.gallery a:nth-child(10) img {
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.gallery a:nth-child(11) img {
+    -moz-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+}
+.gallery a:nth-child(12) img {
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.gallery a:focus img {
+    cursor: default;
+    height: 250%;
+    left: -150px;
+    top: -100px;
+    position: absolute;
+    width: 250%;
+    z-index: 25;
+
+    /* CSS3 transition rules */
+    -webkit-transition: all 1.0s ease;
+    -moz-transition: all 1.0s ease;
+    -o-transition: all 1.0s ease;
+    transition: all 1.0s ease;
+
+    /* CSS3 transform rules */
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+--------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!----------------
+
+

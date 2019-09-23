@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <style>
+        .mark {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tbody class="table_body"><!-- --><tr>
+            <td>one</td>
+            <td>two</td>
+            <td>three</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var tbody = document.querySelector(".table_body");
+        var tr1 = tbody.firstElementChild;
+        var text = tbody.firstChild;
+        console.log(text.nodeName);
+        var td1 = tr1.firstElementChild;
+        console.log(td1.nodeName+ " " + td1.innerHTML);
+        var td2 = td1.nextElementSibling;
+        console.log(td2.nodeName+ " " + td2.innerHTML);
+
+        tr1.removeChild(td1);
+        tr1.appendChild(td1);
+
+        tr1.replaceChild(td2, td1);
+
+        tr1.insertBefore(td1, td2);
+
+        // новая строка
+        var new_tr = document.createElement("tr");
+        var ntd1 = document.createElement("td");
+        //ntd1.style.background = "yellow";
+        ntd1.classList.add("mark");
+        var text = document.createTextNode("один");
+        ntd1.appendChild(text);
+        new_tr.appendChild(ntd1);
+
+        tbody.appendChild(new_tr);
+
+    </script>
+
+</body>
+</html>

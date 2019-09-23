@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="fa-events-icons-ready" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Test for you</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="users_files/style.css">
+    <link href="users_files/css.css" rel="stylesheet">
+    <script src="users_files/8176bbfa2c.js"></script><link href="users_files/8176bbfa2c.css" media="all" rel="stylesheet">
+    <script src="users_files/jquery.js"></script>
+    <script src="users_files/jquery_002.js"></script>
+    <script src="users_files/additional-methods.js"></script>
+    <script src="users_files/scrypt.txt"></script>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <h2 class="logo"><a href="http://127.0.0.1:8000/">Test for You</a></h2>
+        <ul class="nav right">
+            <li><a href="http://127.0.0.1:8000/users/" class="active">Users</a></li>
+            <li><a href="http://127.0.0.1:8000/courses/">Courses</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+
+    
+    <a href="http://127.0.0.1:8000/users/create/" class="btn-add">+</a>
+    <form class="search" method="post" action="/users/?paginate_by=5" novalidate="novalidate">
+        <input name="csrfmiddlewaretoken" value="CBjYRn9ViuVV5Du3Ff10yxnauwoBOJuVrazINim1fMGVIC3NpXpaiVGSCKSSL8ht" type="hidden">
+        <button class="btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <input placeholder="Username" name="user" list="users" type="search">
+        <datalist id="users">
+            
+                <option>Philip Jore</option>
+            
+                <option>Robert Wiene</option>
+            
+                <option>Werner Krauss</option>
+            
+                <option>vasja</option>
+            
+        </datalist>
+    </form>
+    <select class="how-many">
+        
+            
+                <option>3</option>
+            
+        
+            
+                <option selected="selected">5</option>
+            
+        
+            
+                <option>10</option>
+            
+        
+
+    </select>
+    <h1>Users</h1>
+    <table>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>Philip Jore</td>
+                <td>jore@mail.com</td>
+                <td>
+                    <span class="inactive">Inactive</span>
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:8000/users/edit/11" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="http://127.0.0.1:8000/users/delete/11" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Robert Wiene</td>
+                <td>wiene@mail.com</td>
+                <td>
+                    <span class="active">Active</span>
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:8000/users/edit/12" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="http://127.0.0.1:8000/users/delete/12" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Werner Krauss</td>
+                <td>krauss@mail.com</td>
+                <td>
+                    <span class="active">Active</span>
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:8000/users/edit/13" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="http://127.0.0.1:8000/users/delete/13" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>vasja</td>
+                <td>vasja@mail.com</td>
+                <td>
+                    <span class="active">Active</span>
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:8000/users/edit/14" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="http://127.0.0.1:8000/users/delete/14" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    <div>
+        
+            <ul class="paginator">
+                
+                    <li><a href="http://127.0.0.1:8000/users/?page=2&amp;paginate_by=5" class="prev"><i class="fa fa-angle-left fa-2x"></i></a></li>
+                
+                
+                    
+                        <li><a href="http://127.0.0.1:8000/users/?page=1&amp;paginate_by=5">1</a></li>
+                    
+                
+                    
+                        <li><a href="http://127.0.0.1:8000/users/?page=2&amp;paginate_by=5">2</a></li>
+                    
+                
+                    
+                        <li><a href="" class="current">3</a></li>
+                    
+                
+                
+                    <li><a class="done"><i class="fa fa-angle-right fa-2x"></i></a></li>
+                
+            </ul>
+        
+    </div>
+
+</div>
+
+</body></html>

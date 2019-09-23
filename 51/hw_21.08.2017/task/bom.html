@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BOM</h1>
+
+    <div id="demo"></div>
+
+    <button onclick="go()">Go</button>
+
+    <br/>
+    <button onclick="forward()">Forward</button>
+
+    <script>
+        var demo = document.getElementById("demo");
+        function add(text) {
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(text));
+            demo.appendChild(div);
+        }
+
+        var type = screen.orientation.type;
+        add("screen type: " + type);
+
+        function go() {
+            //location.assign("http://itstep.dp.ua");
+            //location.replace("http://itstep.dp.ua");
+            location = "http://itstep.dp.ua";
+        }
+
+        function forward() {
+            history.forward();
+        }
+
+        navigator.geolocation.getCurrentPosition(function (geo) {
+            add("lat: " + geo.coords.latitude);
+            add("long: "+geo.coords.longitude);
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: geo.coords.latitude, lng: geo.coords.longitude},
+                zoom: 15
+            });
+        });
+
+
+    </script>
+
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkLnQ8kOPvkoBEQ8M7sNY8HSwrzQECL7k&callback=initMap"
+            async defer></script>
+</body>
+</html>

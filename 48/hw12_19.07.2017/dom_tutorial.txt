@@ -1,0 +1,19 @@
+                nextNode = function(node) {
+                //...Code goes here to walk to the next node...
+                  
+                  if (node.childNodes.length === 0) {
+                    if (node.nextSibling === null) {
+                      if (node.parentNode.nextSibling === null) {
+                        node = node.parentNode.parentNode.nextSibling;
+                      } else {
+                        node = node.parentNode.nextSibling;
+                      }
+                    } else {
+                      node = node.nextSibling;
+                    }
+                  } else {
+                    node = node.childNodes[0];
+                  }
+                  
+                return node;
+                };

@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px inset;
+    padding: 3px;
+}
+
+th {
+    width: 175px;
+    background-image: url("img/fon.jpeg");
+}
+
+th:last-child {
+    width: 115px;
+}
+
+tr td:nth-child(2) {
+    text-align: center;
+}
+
+tr td:last-child {
+    text-align: right;
+}

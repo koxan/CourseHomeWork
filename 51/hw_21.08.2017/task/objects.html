@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+    <h2>Screen</h2>
+    <div>
+        <p>width: 1990</p>
+    </div>
+    <script>
+        function Car(model, color, price) {
+            this.model = model;
+            this.color = color;
+            this.price = price;
+
+            this.print = function () {
+                console.log("model: " + this.model);
+                console.log("color: " + this.color);
+                console.log("price: " + this.price);
+            };
+        }
+
+        var ferrari = new Car('ferrari', 'red', 100000);
+        Car.prototype.owner = 'Jack';
+        ferrari['year'] = 2010;
+        console.dir(ferrari);
+
+        function Track(weight) {
+            Car.call(this, "Ford", "Black", 12000);
+            this.weight = weight;
+        }
+
+        Track.prototype = Object.create(Car.prototype);
+        Track.prototype.constructor = Track;
+
+        var ford = new Track(100);
+        ford.print();
+        console.dir(ford);
+
+        ferrari.print();
+
+        for(var prop in ferrari) {
+            if(typeof (ferrari[prop]) != 'function') {
+                console.log("ferrari." + prop + ": " + ferrari[prop]);
+            } else {
+                console.log("ferrari." + prop + ": is method");
+            }
+        }
+
+        var lanos = new Car('lanos', 'gray', 1000);
+        console.log(lanos.owner);
+
+
+        var arr = [1, 2, 3, -5];
+        Array.prototype.has_negative = function () {
+            var has = false;
+            for(let i=0; i<this.length; i++) {
+                if(this[i] < 0) {
+                    has = true;
+                    break;
+                }
+            }
+            return has;
+        };
+
+        console.log(arr.has_negative());
+
+        var arr2 = [1,2,3,6];
+        console.log(arr2.has_negative());
+
+    </script>
+</body>
+</html>

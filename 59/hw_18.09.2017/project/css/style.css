@@ -1,0 +1,92 @@
+.container {
+    background-color: darkgray;
+    border-radius: 5px;
+}
+
+.container a, .container button {
+    color: white;
+    padding: 7px;
+}
+
+.container > a:hover, .container div:hover {
+    background-color: gray;
+}
+
+.container > a, .container div {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.container button {
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    display: block;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+}
+
+#myDropdown {
+    display: none;
+    position: absolute;
+    background-color: greenyellow;
+    top: 32px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#myDropdown a:hover {
+    background-color: yellow;
+}
+
+#accordion div {
+    display: none;
+    border: 1px solid black;
+    background: lightblue;
+}
+
+#accordion .active {
+    background: black;
+    color: white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#accordion h3 {
+    margin: 2px 0 0 0;
+    padding: 5px;
+    background-color: gray;
+    border-radius: 5px;
+}
+
+#accordion h3:before, #accordion h3.active:before {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+#accordion h3:before {
+    content: '→';
+}
+
+#accordion h3.active:before {
+    content: '↓';
+}
+
+#accordion p {
+    margin: 5px;
+}

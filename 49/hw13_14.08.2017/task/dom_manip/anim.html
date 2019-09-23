@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #car {
+            width: 250px;
+        }
+    </style>
+    <script>
+        var interval;
+        var car;
+
+        function moveCar() {
+            car.style.marginLeft = "0px";
+            var delta = 1;
+            var drive = function () {
+                var margin = parseInt(car.style.marginLeft) || 0;
+                //console.log("marginLeft: " + margin);
+                margin += delta;
+                car.style.marginLeft = margin + "px";
+            }
+
+            interval = setInterval(drive, 1000 / 60);
+        }
+
+        function stopCar() {
+            if (interval !== undefined) {
+                clearInterval(interval);
+
+                interval = undefined;
+            }
+        }
+
+        //window.onload = moveCar;
+        //window.addEventListener('load', moveCar);
+
+        //        window.onload = function () {
+        //            alert("loaded");
+        //        };
+        //        window.addEventListener('load', function () {
+        //            alert('loaded');
+        //        });
+
+        window.addEventListener('load', function () {
+            car = document.getElementById("car");
+            document.body.lastElementChild.addEventListener('click', stopCar);
+
+            document.body.addEventListener('mousemove', function (event) {
+
+                document.getElementById("out").innerHTML = "pageX: " + event.pageX + " pageY: " + event.pageY +
+                    "<br/>clientX: " + event.clientX + " clientY: " + event.clientY +
+                    "<br/>screenX: " + event.screenX + " screenY: " + event.screenY;
+            });
+
+            document.getElementById("input").addEventListener('keypress',
+                function (event) {
+                    console.log(event);
+                    if(isNaN(event.key)) {
+                        event.preventDefault();// предотвращает стадартные действия
+                    }
+                });
+
+
+        });
+
+        function getData(el) {
+            alert(el.value);
+        }
+
+
+        //window.removeEventListener('load', moveCar);
+    </script>
+</head>
+<body>
+
+<div id="out"></div>
+<img id="car" src="https://www.moj.io/wp-content/themes/mojio-child/assets/img/home/orangecar.png"/>
+<br/>
+<button onclick="moveCar()">Start</button>
+<button onclick="stopCar()">Stop</button>
+<input id="input" onblur="getData(this)"/>
+</body>
+</html>

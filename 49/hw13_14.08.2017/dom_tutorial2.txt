@@ -1,0 +1,59 @@
+var text = 'Hello World!'; var div = document.getElementById('rollercoaster');
+
+// обычное задание
+// стартовый размер 10px
+var charSize = 10;
+for(var i = 0; i < text.length; i++) {
+  var spanElem = document.createElement('SPAN');
+  spanElem.appendChild(document.createTextNode(text[i]));
+  spanElem.style.fontSize = charSize + 'px';
+  if (i < text.length / 2) {
+    charSize += 5; 
+  } else {
+    charSize -= 5;
+  }
+  div.appendChild(spanElem);
+}
+
+var spanElem = document.createElement('SPAN');
+spanElem.appendChild(document.createTextNode(''));
+div.appendChild(spanElem);
+
+// разноцветная и синусоидальная строка
+for(var i = 0; i < text.length; i++) {
+  // 0 - 255 цвет для RGB
+  var randRed = parseInt(Math.random() * 256);
+  var randGreen = parseInt(Math.random() * 256);
+  var randBlue = parseInt(Math.random() * 256);
+  
+  var spanElem = document.createElement('SPAN');
+  spanElem.appendChild(document.createTextNode(text[i]));
+  spanElem.style.fontSize = '20px';
+  spanElem.style.color = 'rgb(' + randRed + ',' + randGreen + ',' + randBlue + ')';
+  
+  // для синусоидального вида
+  spanElem.style.position = 'relative';
+  spanElem.style.top = Math.sin(i / 2) * 20 + 'px';
+  spanElem.style.letterSpacing = '5px';
+  
+  div.appendChild(spanElem);
+}
+
+/*
+// определял какой коеф. нужен для 0 - 255 цвета
+var max = -1000;
+var min = 1000;
+for(var i = 0; i < 1000; i++) {
+  var randColor = parseInt(Math.random() * 256); // 0 - 255
+  if (max < randColor) {
+    max = randColor;
+  }
+  if (min > randColor) {
+    min = randColor;
+  }
+  console.log(randColor);
+}
+
+console.log('max = ' + max);
+console.log('min = ' + min);
+*/

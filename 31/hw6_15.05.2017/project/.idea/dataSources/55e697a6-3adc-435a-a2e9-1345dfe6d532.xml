@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="classwork1"/>
+    <schema id="2" name="hr"/>
+    <schema id="3" name="hw6">
+      <visible>1</visible>
+    </schema>
+    <schema id="4" name="information_schema"/>
+    <schema id="5" name="mydb"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="publications"/>
+    <schema id="9" name="sakila"/>
+    <schema id="10" name="task"/>
+    <schema id="11" name="test"/>
+    <schema id="12" name="to_do_list"/>
+    <schema id="13" name="transport_co"/>
+    <schema id="14" name="world"/>
+    <table id="15" parent="3" name="count"/>
+    <column id="16" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="15" name="amount">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="18" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

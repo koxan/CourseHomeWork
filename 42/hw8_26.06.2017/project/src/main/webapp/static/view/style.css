@@ -1,0 +1,11 @@
+h1 {
+    color: green;
+}
+
+form table {
+    border: 1px dotted gray;
+}
+
+form input[type=submit] {
+    float: right;
+}
